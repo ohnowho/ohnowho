@@ -1,0 +1,15 @@
+@import "styles/global.scss";
+
+.helloworlds{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    .colors{
+        color: #000;
+        color: #000;
+        color: #000;
+        color: #47def5;
+        color: #efd1b5;
+    }
+}
