@@ -3,22 +3,14 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 
 const cdnHost = `/images`;
-let data = [];
 
-const MainHeader = ({ lang, currency }: MainHeaderProps) => {
+const Zswiper = () => {
   useEffect(() => {
   }, []);
   return (
     <div className={styles.zswiper}>
-      <ul>
-        {data.map((item, index) => (
-          <li key={index}>
-            <img src={item.img} />
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
 
-export default MainHeader;
+export default Zswiper;
