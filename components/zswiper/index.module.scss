@@ -1,11 +1,57 @@
 @import "styles/global.scss";
+@keyframes moveRight {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(1000px);
+    }
+}
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-200px);
+    }
+}
 
+
+.countainer{
+    position: static;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    .scroller{
+        position: absolute;
+        display: inline-block;
+        top: 0vh;
+        height: 100vh;
+        width: 100vw;
+        overflow: scroll;
+        span{
+            position: relative;
+            display: inline-block;
+            height: 300vh;
+            width: 100vw;
+            background-color: transparent;
+            z-index: 8;
+            opacity: 0.1;
+            // pointer-events: none;
+        }
+    }
+}
 .zswiper{
-    position: relative;
+    position: absolute;
     display: inline-block;
+    top: 0;
+    left: 0;
+    bottom: auto;
     width: 100vw;
     height: 100vh;
     background-color: black;
+    overflow: hidden;
+    z-index: 7;
     .title{
         position: absolute;
         top: 0;
@@ -32,6 +78,9 @@
         display: inline-block;
         padding: 0;
         margin: 0;
+    }
+    .wrap{
+        overflow-x: hidden;
     }
     ul{ 
         position: relative;
@@ -67,7 +116,6 @@
                     width: 66vw;
                 }
             }
-
         }
         &:nth-child(2n){
             li:nth-child(2n){
@@ -81,14 +129,4 @@
 }
 
 
-// @keyframes rotate {
-//     0% {
-//         transform: rotate(0);
-//     }
-//     100% {
-//         transform: rotate(360deg);
-//     }
-// }
-// @scroll-timeline box-rotate {
-//     source: selector("h1");
-// }
+

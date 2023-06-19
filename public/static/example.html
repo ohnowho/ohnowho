@@ -1,239 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>three.js webgl - geometry - terrain + fog</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="main.css">
-		<style>
-			body {
-				background-color: #efd1b5;
-				color: #61443e;
-			}
-			a {
-				color: #a06851;
-			}
-		</style>
-	</head>
-	<body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+ <style media="screen">
+   html, body {
+     height: 100%;
+   }
+   body {
+     margin: 0;
+     padding: 0;
+   }
+   .wrapper {
+     position: absolute;
+     left: 0; right: 0;
+     top: 0;bottom: 0;
+     max-width: 650px;
+     margin:  0 auto;
+   }
+   #fixedHeader {
+     background-color: pink;
+     top: 0;
+   }
+
+   #fixedFooter {
+    background-color: green;
+    bottom: 0;
+   }
+
+   #fixedHeader, #fixedFooter {
+     position: absolute;
+     height: 3em;
+     width: 100%;
+   }
+
+   #content {
+     position: absolute;
+     left: 0;right: 0;
+     top: 3em;bottom:3em;
+     background-color: #ccc;
+     padding: 0 1em 2em;
+     overflow: auto;
+     color: #172c45;
+     line-height: 2;
+   }
+
+  .layout {
+    width: 100%;
+    height: 3em;
+    display: table;
+    table-layout: fixed;
+    color: white;
+    text-align: center;
+  }
+  .layout .left, .layout .main, .layout .right {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .layout .left {
+    background: red;
+  }
+  .layout .right {
+    background: blue;
+  }
+  .layout .main {
+    background: black;
+  }
+
+ </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="fixedHeader">
+      <div class="layout">
+        <div class="left">阅读</div>
+        <div class="main">电影</div>
+        <div class="right">评论</div>
+      </div>
+    </div>
+
+    <div id="content">
+        <h3></h3>
+        <p>
+          <span class="zz"></span>
+          <time></time>
+        </p>
+        <p class="main"></p>
+    </div>
+
+    <div id="fixedFooter">
+      <div class="layout">
+        <div class="left">登录</div>
+        <div class="right">个人中心</div>
+      </div>
+    </div>
+
+  </div>
+
+<script type="text/javascript">
+  var 标题 = document.querySelector('#content>h3'),
+      作者 =  document.querySelector('.zz'),
+      时间 = document.querySelector('time');
+      内容 = document.querySelector('#content .main')
 
-		<div id="container"></div>
-		<div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - webgl terrain + fog demo <br />(left click: forward, right click: backward)</div>
 
-		<!-- Import maps polyfill -->
-		<!-- Remove this when import maps will be widely supported -->
-		<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+      标题.innerText = '春风十里不如你 原来出自这首诗，读完原诗我彻底凌乱了';
+      作者.innerText = '诗书沈公子';
+      时间.innerText = '17-08-1702:12';
+      内容.innerHTML = `
 
-		<script type="importmap">
-			{
-				"imports": {
-					"three": "../build/three.module.js",
-					"three/addons/": "./jsm/"
-				}
-			}
-		</script>
+      诗歌发展到唐代，迎来了高峰。唐诗的艺术之美令人惊叹，它朗朗上口，不仅韵律极美，而且富有内涵，从侧面反映了大唐包容、乐观、浪漫的泱泱大国气质。
 
-		<script type="module">
+不知从什么时候开始，“春风十里不如你”成为了一句很文艺的话，而且还衍生出许多句子。其实这句话是出自杜牧的赠别二首其一。杜牧，有小杜之称，他的诗风华流美、雄姿英发，在萎靡的晚唐诗坛以雄健的气概独持拗峭。但是杜牧的文学思想和他的行为却有许多矛盾之处。杜牧曾在牛僧孺手下做掌书记，地点是在扬州。白天杜牧办公，晚上便去过他的风流生活。牛僧孺卸任之后，派人给杜牧送一个盒子，里面全是杜牧狎妓的记录，杜牧羞愧难当。牛僧孺稍稍训斥了杜牧，劝他不要太放纵自己，收敛一下。牛僧孺卸任之后，杜牧也就离开扬州，他做了三首诗，其中就有“春风十里不如你”的原诗。
+原诗如下：
+<img src = 'http://t11.baidu.com/it/u=3275396440,2124670595&fm=173&s=D8211D72196B7F3E82D5B4C7010070B3&w=640&h=426&img.JPG' width="100%" />
+<pre>
 
-			import * as THREE from 'three';
+娉娉袅袅十三余，
 
-			import Stats from 'three/addons/libs/stats.module.js';
+豆蔻梢头二月初。
 
-			import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js';
-			import { ImprovedNoise } from 'three/addons/math/ImprovedNoise.js';
+春风十里扬州路，
 
-			let container, stats;
-			let camera, controls, scene, renderer;
-			let mesh, texture;
+卷上珠帘总不如。
 
-			const worldWidth = 256, worldDepth = 256;
-			const clock = new THREE.Clock();
+姿态美好举止轻盈正是十三年华，
 
-			init();
-			animate();
+活象二月初含苞待放一朵豆蔻花。
 
-			function init() {
+看遍扬州城十里长街的青春佳丽，
 
-				container = document.getElementById( 'container' );
+卷起珠帘卖俏粉黛没有比得上她。
+</pre>
+<img src="http://t11.baidu.com/it/u=918247060,611526902&fm=173&s=513AEF7ADEABD76E5208BA3C030040D4&w=640&h=427&img.JPG" width="100%" >
+<br />这首诗是杜牧写给他所眷恋的妓女的赠别诗。从诗中可以看出两个人感情真挚，杜牧夸奖她是扬州最漂亮的女人。
 
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
+诗的第一句正面描述女子的美丽，第二句不再写女子，转而写春花，是将花比女子。“豆蔻”产于南方，其花成穗时，花渐放出，颜色稍淡。南方人摘其含苞待放者，美其名曰“含胎花”，常用来比喻处女。含胎花用来比喻“十三余”的小歌女，是形象优美而又贴切的。“春风”句意兴酣畅，渲染出大都会富丽豪华气派，使人如睹十里长街，车水马龙，花枝招展。这里歌台舞榭密集，美女如云。“珠帘”是歌楼房栊设置，“卷上珠帘”则看得见“高楼红袖”。而扬州路上不知有多少珠帘，所有帘下不知有多少红衣翠袖的美人，但“卷上珠帘总不如”。诗用压低扬州所有美人来突出一人之美，有众星拱月的效果。
 
-				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0xefd1b5 );
-				scene.fog = new THREE.FogExp2( 0xefd1b5, 0.0025 );
+“春风十里不如你”虽然是赞美之词，但是知道原诗的含义之后，还是少说为妙。
+      `
 
-				const data = generateHeight( worldWidth, worldDepth );
 
-				camera.position.set( 100, 800, - 800 );
-				camera.lookAt( - 100, 810, - 800 );
+</script>
 
-				const geometry = new THREE.PlaneGeometry( 7500, 7500, worldWidth - 1, worldDepth - 1 );
-				geometry.rotateX( - Math.PI / 2 );
-
-				const vertices = geometry.attributes.position.array;
-
-				for ( let i = 0, j = 0, l = vertices.length; i < l; i ++, j += 3 ) {
-
-					vertices[ j + 1 ] = data[ i ] * 10;
-
-				}
-
-				texture = new THREE.CanvasTexture( generateTexture( data, worldWidth, worldDepth ) );
-				texture.wrapS = THREE.ClampToEdgeWrapping;
-				texture.wrapT = THREE.ClampToEdgeWrapping;
-				texture.colorSpace = THREE.SRGBColorSpace;
-
-				mesh = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { map: texture } ) );
-				scene.add( mesh );
-
-				renderer = new THREE.WebGLRenderer();
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				container.appendChild( renderer.domElement );
-
-				controls = new FirstPersonControls( camera, renderer.domElement );
-				controls.movementSpeed = 150;
-				controls.lookSpeed = 0.1;
-
-				stats = new Stats();
-				container.appendChild( stats.dom );
-
-
-				//
-
-				window.addEventListener( 'resize', onWindowResize );
-
-			}
-
-			function onWindowResize() {
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				renderer.setSize( window.innerWidth, window.innerHeight );
-
-				controls.handleResize();
-
-			}
-
-			function generateHeight( width, height ) {
-
-				let seed = Math.PI / 4;
-				window.Math.random = function () {
-
-					const x = Math.sin( seed ++ ) * 10000;
-					return x - Math.floor( x );
-
-				};
-
-				const size = width * height, data = new Uint8Array( size );
-				const perlin = new ImprovedNoise(), z = Math.random() * 100;
-
-				let quality = 1;
-
-				for ( let j = 0; j < 4; j ++ ) {
-
-					for ( let i = 0; i < size; i ++ ) {
-
-						const x = i % width, y = ~ ~ ( i / width );
-						data[ i ] += Math.abs( perlin.noise( x / quality, y / quality, z ) * quality * 1.75 );
-
-					}
-
-					quality *= 5;
-
-				}
-
-				return data;
-
-			}
-
-			function generateTexture( data, width, height ) {
-
-				let context, image, imageData, shade;
-
-				const vector3 = new THREE.Vector3( 0, 0, 0 );
-
-				const sun = new THREE.Vector3( 1, 1, 1 );
-				sun.normalize();
-
-				const canvas = document.createElement( 'canvas' );
-				canvas.width = width;
-				canvas.height = height;
-
-				context = canvas.getContext( '2d' );
-				context.fillStyle = '#000';
-				context.fillRect( 0, 0, width, height );
-
-				image = context.getImageData( 0, 0, canvas.width, canvas.height );
-				imageData = image.data;
-
-				for ( let i = 0, j = 0, l = imageData.length; i < l; i += 4, j ++ ) {
-
-					vector3.x = data[ j - 2 ] - data[ j + 2 ];
-					vector3.y = 2;
-					vector3.z = data[ j - width * 2 ] - data[ j + width * 2 ];
-					vector3.normalize();
-
-					shade = vector3.dot( sun );
-
-					imageData[ i ] = ( 96 + shade * 128 ) * ( 0.5 + data[ j ] * 0.007 );
-					imageData[ i + 1 ] = ( 32 + shade * 96 ) * ( 0.5 + data[ j ] * 0.007 );
-					imageData[ i + 2 ] = ( shade * 96 ) * ( 0.5 + data[ j ] * 0.007 );
-
-				}
-
-				context.putImageData( image, 0, 0 );
-
-				// Scaled 4x
-
-				const canvasScaled = document.createElement( 'canvas' );
-				canvasScaled.width = width * 4;
-				canvasScaled.height = height * 4;
-
-				context = canvasScaled.getContext( '2d' );
-				context.scale( 4, 4 );
-				context.drawImage( canvas, 0, 0 );
-
-				image = context.getImageData( 0, 0, canvasScaled.width, canvasScaled.height );
-				imageData = image.data;
-
-				for ( let i = 0, l = imageData.length; i < l; i += 4 ) {
-
-					const v = ~ ~ ( Math.random() * 5 );
-
-					imageData[ i ] += v;
-					imageData[ i + 1 ] += v;
-					imageData[ i + 2 ] += v;
-
-				}
-
-				context.putImageData( image, 0, 0 );
-
-				return canvasScaled;
-
-			}
-
-			//
-
-			function animate() {
-
-				requestAnimationFrame( animate );
-
-				render();
-				stats.update();
-
-			}
-
-
-			function render() {
-
-				controls.update( clock.getDelta() );
-				renderer.render( scene, camera );
-
-			}
-
-		</script>
-
-	</body>
+</body>
 </html>
