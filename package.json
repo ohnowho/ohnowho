@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
+    "@react-spring/parallax": "^9.7.2",
+    "@react-spring/web": "^9.7.2",
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
     "@types/react-dom": "18.2.4",
@@ -20,8 +22,10 @@
     "eslint-config-next": "13.4.4",
     "next": "13.4.4",
     "postcss": "8.4.24",
+    "rc-scroll-anim": "^2.7.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-spring": "^9.7.1",
     "tailwindcss": "3.3.2",
     "three": "^0.153.0",
     "typescript": "5.1.3"
