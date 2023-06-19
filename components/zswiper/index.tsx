@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import { animated, useSpring, useScroll } from "@react-spring/web";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+// import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { Parallax } from "rc-scroll-anim";
 
 const cdnHost = `/images`;
 const arr = Array.from({ length: 12 }, (v, k) => {
@@ -19,6 +20,21 @@ let arrs = spArr(arr, 4);
 const uls = [
   {
     imgs: arrs[0],
+    transformX: -600,
+    x:0,
+    playScale:[0.9,1.5]
+  },
+  {
+    imgs: arrs[1],
+    transformX: 300,
+    x: -300,
+    playScale:[0,1.2]
+  },
+  {
+    imgs: arrs[2],
+    transformX: -600,
+    x:0,
+    playScale:[0,1]
   },
 ];
 
@@ -47,20 +63,24 @@ const Zswiper = () => {
           <h2>Hermès Boutique Tokyo</h2>
         </div>
         <div className={styles.wrap}>
-          {arrs.map((row, rowi) => (
-            <ul id={`row-${rowi}`} key={rowi}>
-              {row.map((item, itemi) => (
-                <li key={itemi}>
-                  <img src={item}></img>
-                </li>
-              ))}
-            </ul>
+          {uls.map((row, rowi) => (
+            <Parallax
+              animation={{ x: row.x, playScale:row.playScale,replay:true}}
+              style={{ transform: `translateX(${row.transformX}px)`}}
+              className="code-box-shape"
+            >
+              <ul id={`row-${rowi}`} key={rowi}>
+                {row.imgs.map((item, itemi) => (
+                  <li key={itemi}>
+                    <img src={item}></img>
+                  </li>
+                ))}
+              </ul>
+            </Parallax>
           ))}
         </div>
       </div>
-      <div id="zswiper-scroll" className={styles.scroller}>
-        <span></span>
-      </div>
+      <div className={styles.scroller}></div>
     </div>
   );
 };
