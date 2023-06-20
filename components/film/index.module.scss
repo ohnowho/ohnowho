@@ -1,8 +1,56 @@
 @import "styles/global.scss";
 
-.film{
-
+.film {
+    position: relative;
+    width: 100vw;
+    // height: 100vh;
+    overflow: hidden;
+    .title{
+        display: inline-block;
+        height: 10vh;
+        width: 100%;
+        background-image: linear-gradient(
+            to top,
+            rgba(0,0,0,0) 0%,
+            rgba(0,0,0,0.1) 10%,
+            rgba(0,0,0,0.2) 40%,
+            rgba(0,0,0,0.6) 60%,
+            rgba(0,0,0,1) 100%);
+        z-index: 9;
+        will-change: transform;
+        transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        transform-style: preserve-3d;
+    }
+    .countainer{
+        position: relative;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        overflow-y: hidden;
+    }
+    .wrap {
+        ul {
+            width: 100%;
+            li {
+                margin: 15px 5px;
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 230px;
+                    height: 322px;
+                    border-radius: 15px;
+                    object-fit: cover;
+                    filter: brightness(80%) grayscale(10%);
+                    transition: all linear 0.6s;
+                    &:hover{
+                        filter: brightness(100%) grayscale(0%);
+                        transition: all linear 0.3s;
+                    }
+                }
+                p{
+                    display: none;
+                }
+            }
+        }
+    }
 }
-
-
-

@@ -9,42 +9,44 @@ const Film = ({ data }: { data: any[] }) => {
       imgs: data.slice(0, data.length / 2),
       animation: {
         y: 0,
-        playScale: [0, 1.5],
+        playScale: [1, 9],
       },
       style: {
-        transformY: 0,
-      },
+        transform: 'translateY(-2000px)'
+      }
     },
     {
       imgs: data.slice(data.length / 2, data.length),
       animation: {
-        y: 0,
-        playScale: [0, 1.5],
+        y: -2000,
+        playScale: [0,6],
       },
-      style: {
-        transformY: 0,
-      },
-    },
+    }
   ];
   useEffect(() => {}, []);
   return (
-    <div className={styles.photowall}>
+    <div className={styles.film} >
+      <div className={styles.title}></div>
+      <div className={styles.countainer}>
       {trails.map((row, rowi) => (
         <Parallax
           animation={row.animation}
-          style={row.style}
           className={styles.wrap}
-          key={rowi}
-        >
+          style={row.style}
+          key={rowi}>
           <ul id={`row-${rowi}`} key={rowi}>
             {row.imgs.map((item, itemi) => (
               <li key={itemi}>
-                <img src={item}></img>
+                <p>{item.label.split('\n').map((text,texti) => (
+                  <span key={texti}>{text}</span>
+                ))}</p>
+                <img src={item.img}></img>
               </li>
             ))}
           </ul>
         </Parallax>
       ))}
+      </div>
     </div>
   );
 };

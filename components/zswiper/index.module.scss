@@ -59,7 +59,9 @@
     height: 300vh;
 }
 
-.zswiper {
+
+.wrap {
+    position: relative;
     display: inline-block;
     width: 100vw;
     height: 100vh;
@@ -67,5 +69,4 @@
     overflow-x:hidden;
     overflow-y: auto;
     z-index: 7;
-
 }
