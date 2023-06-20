@@ -5,6 +5,7 @@ import { animated, useSpring, useScroll } from "@react-spring/web";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { Parallax } from "rc-scroll-anim";
 import PhotoWall from '../photowall';
+import Film from '../film';
 const cdnHost = `/images`;
 const arr = Array.from({ length: 12 }, (v, k) => {
   return `https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k}.webp`;
@@ -20,24 +21,30 @@ let arrs = spArr(arr, 4);
 const photos = [
   {
     imgs: arrs[0],
-    transformX: -600,
-    x: 0,
-    playScale:[0,1.5]
+    animation: {
+      x: 0,
+      playScale:[0,1.5]
+    }
   },
   {
     imgs: arrs[1],
-    transformX: 0,
-    x: -500,
-    playScale:[0,1.3]
+    animation: {
+      x: -500,
+      playScale:[0,1.3]
+    },
   },
   {
     imgs: arrs[2],
-    transformX: -600,
-    x: 0,
-    playScale:[0.2,1.3]
-  },
-];
-
+    animation: {
+      x: 0,
+      playScale: [0.2,1.3]
+    }
+  }];
+const films = Array.from({ length: 12 }, (v, k) => {
+  return {
+    label: `F/4.0\n30\nISO 1250`,
+    img:`https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k}.webp`
+  }});
 const Zswiper = () => {
   const [offset, setOffset] = useState(0);
   const { scrollYProgress } = useScroll();
@@ -63,6 +70,7 @@ const Zswiper = () => {
           <h2>Hermès Boutique Tokyo</h2>
         </div>
         <PhotoWall data={photos} ></PhotoWall>
+        {/* <Film data={films}></Film> */}
       </div>
       <div className={styles.scroller}></div>
     </div>

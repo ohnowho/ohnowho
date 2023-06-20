@@ -9,6 +9,9 @@
     overflow-x: hidden;
     overflow-y: hidden;
     .wrap{
+        &:nth-child(2n-1){
+            transform: translateX(-600px);
+        }
     }
     ul{ 
         position: relative;

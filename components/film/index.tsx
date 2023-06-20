@@ -3,24 +3,39 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import { Parallax } from "rc-scroll-anim";
 
-function spArr(arr, num) {
-  let newArr = [];
-  for (let i = 0; i < arr.length; ) {
-    newArr.push(arr.slice(i, (i += num)));
-  }
-  return newArr;
-}
-
-const PhotoWall = ({data}:{data: any[]}) => {
+const Film = ({ data }: { data: any[] }) => {
+  let trails = [
+    {
+      imgs: data.slice(0, data.length / 2),
+      animation: {
+        y: 0,
+        playScale: [0, 1.5],
+      },
+      style: {
+        transformY: 0,
+      },
+    },
+    {
+      imgs: data.slice(data.length / 2, data.length),
+      animation: {
+        y: 0,
+        playScale: [0, 1.5],
+      },
+      style: {
+        transformY: 0,
+      },
+    },
+  ];
   useEffect(() => {}, []);
   return (
     <div className={styles.photowall}>
-      {data.map((row, rowi) => (
+      {trails.map((row, rowi) => (
         <Parallax
-          animation={{ x: row.x, playScale: row.playScale, replay: true }}
-          style={{ transform: `translateX(${row.transformX}px)` }}
+          animation={row.animation}
+          style={row.style}
           className={styles.wrap}
-          key={rowi}>
+          key={rowi}
+        >
           <ul id={`row-${rowi}`} key={rowi}>
             {row.imgs.map((item, itemi) => (
               <li key={itemi}>
@@ -34,4 +49,4 @@ const PhotoWall = ({data}:{data: any[]}) => {
   );
 };
 
-export default PhotoWall;
+export default Film;
