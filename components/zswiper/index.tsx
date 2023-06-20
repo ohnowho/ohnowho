@@ -4,7 +4,7 @@ import styles from "./index.module.scss";
 import { animated, useSpring, useScroll } from "@react-spring/web";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { Parallax } from "rc-scroll-anim";
-
+import PhotoWall from '../photowall';
 const cdnHost = `/images`;
 const arr = Array.from({ length: 12 }, (v, k) => {
   return `https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k}.webp`;
@@ -17,24 +17,24 @@ function spArr(arr, num) {
   return newArr;
 }
 let arrs = spArr(arr, 4);
-const uls = [
+const photos = [
   {
     imgs: arrs[0],
     transformX: -600,
-    x:0,
-    playScale:[0.9,1.5]
+    x: 0,
+    playScale:[0,1.5]
   },
   {
     imgs: arrs[1],
-    transformX: 300,
-    x: -300,
-    playScale:[0,1.2]
+    transformX: 0,
+    x: -500,
+    playScale:[0,1.3]
   },
   {
     imgs: arrs[2],
     transformX: -600,
-    x:0,
-    playScale:[0,1]
+    x: 0,
+    playScale:[0.2,1.3]
   },
 ];
 
@@ -62,23 +62,7 @@ const Zswiper = () => {
           <h1>GZXM</h1>
           <h2>Hermès Boutique Tokyo</h2>
         </div>
-        <div className={styles.wrap}>
-          {uls.map((row, rowi) => (
-            <Parallax
-              animation={{ x: row.x, playScale:row.playScale,replay:true}}
-              style={{ transform: `translateX(${row.transformX}px)`}}
-              className="code-box-shape"
-            >
-              <ul id={`row-${rowi}`} key={rowi}>
-                {row.imgs.map((item, itemi) => (
-                  <li key={itemi}>
-                    <img src={item}></img>
-                  </li>
-                ))}
-              </ul>
-            </Parallax>
-          ))}
-        </div>
+        <PhotoWall data={photos} ></PhotoWall>
       </div>
       <div className={styles.scroller}></div>
     </div>
