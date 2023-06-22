@@ -8,11 +8,14 @@ const Film = ({ data }: { data: any[] }) => {
     {
       imgs: data.slice(0, data.length / 2),
       animation: {
-        y: 0,
-        playScale: [1, 9],
+        y: 1000,
+        playScale: [0, 3],
       },
       style: {
-        transform: 'translateY(-2000px)'
+        // transform: 'translateY(-2000px)'
+        willChange: `transform`,
+        transform: `translate3d(0px, -2000px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+        transformStyle: `preserve-3d`
       }
     },
     {
@@ -21,15 +24,24 @@ const Film = ({ data }: { data: any[] }) => {
         y: -2000,
         playScale: [0,6],
       },
+      style: {
+        // transform: 'translateY(-2000px)'
+        willChange: `transform`,
+        transform: `translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+        transformStyle: `preserve-3d`
+      }
+
     }
   ];
   useEffect(() => {}, []);
   return (
-    <div className={styles.film} >
+    <div className={styles.film} id="film" >
       <div className={styles.title}></div>
       <div className={styles.countainer}>
       {trails.map((row, rowi) => (
         <Parallax
+          // targetId="film"
+          location="film"
           animation={row.animation}
           className={styles.wrap}
           style={row.style}
