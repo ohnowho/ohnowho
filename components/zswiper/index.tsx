@@ -5,7 +5,9 @@ import { animated, useSpring, useScroll } from "@react-spring/web";
 // import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { Parallax } from "rc-scroll-anim";
 import PhotoWall from "../photowall";
-import Film from "../film";
+import {FilmFall} from "../filmfall";
+import {Film} from "../filmscroll";
+import {Nav} from "../nav";
 const cdnHost = `/images`;
 const arr = Array.from({ length: 12 }, (v, k) => {
   return `https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k}.webp`;
@@ -37,7 +39,7 @@ const photos = [
     imgs: arrs[2],
     animation: {
       x: 0,
-      playScale: [0.2, 1.3],
+      playScale: [0, 1.3],
     },
   },
 ];
@@ -63,18 +65,27 @@ const Zswiper = () => {
   }
   useEffect(() => {
     // window.addEventListener("wheel", handleScroll,{passive:false});
+    let lang = navigator.language||navigator.userLanguage;
+    let promise = document.querySelector('video').play();
   }, []);
   return (
     <div className={styles.countainer}>
-        <div className={styles.wrap}>
+        <Nav title={`GZXM`}></Nav>
+        <section className={styles.video}>
+          <video controls={false}  muted autoplay loop={true} poster={`https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-1`}>
+            <source src="https://ginzaxiaoma.com/static/images/index.mp4" type="video/mp4"/>
+          </video>
+        </section>
+        <Film data={films} title={`GinzaXiaoma`}></Film>
+        <section className={styles.wrap}>
           <div className={styles.title} id="h1">
             <h1>GZXM</h1>
             <h2>Hermès Boutique Tokyo</h2>
           </div>
           <PhotoWall data={photos}></PhotoWall>
-        </div>
-        <Film data={films}></Film>
-      <div className={styles.scroller}></div>
+        </section>
+        <FilmFall data={films} title={`GinzaXiaoma`}></FilmFall>
+      <section className={styles.scroller}></section>
     </div>
   );
 };

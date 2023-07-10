@@ -1,6 +1,7 @@
 html{
   background-color: black;
-  scroll-behavior: smooth;    
+  scroll-behavior: smooth;
+  font-size: 0.266667vw;
 }
 body{
   margin: 0;
@@ -11,4 +12,6 @@ main,div,p,ul,li{
   padding: 0;
   margin: 0;
 }
+
+
 
