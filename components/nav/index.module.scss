@@ -12,7 +12,7 @@
     backdrop-filter: blur(16px);
 
     .wrap {
-        padding: 10px 16px;
+        padding: 10rem 16rem;
         width: 100%;
         position: relative;
         display: flex;
@@ -21,8 +21,8 @@
         align-items: center;
 
         picture {
-            width: 32px;
-            height: 32px;
+            width: 32rem;
+            height: 32rem;
 
             img {
                 display: inline-block;
@@ -37,13 +37,13 @@
         .title {
             font-family: serif;
             color: #cec9c9;
-            font-size: 6vw;
+            font-size: 18rem;
             white-space: nowrap;
         }
         span {
             font-family: serif;
             color: #cec9c9;
-            font-size: 16px;
+            font-size: 16rem;
             white-space: nowrap;
         }
     }
