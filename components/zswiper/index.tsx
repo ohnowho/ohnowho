@@ -50,6 +50,7 @@ const films = Array.from({ length: 12 }, (v, k) => {
   };
 });
 const Zswiper = () => {
+  const logo = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAdVBMVEXNq4ObgmOKdFiReV3AoHrbt4skHhcAAAAWEw+ukm8tJh0NCwhEOSyEb1QxKR9SRTV+alA9Mye2mXX2zpztxpf/3qmhh2caFhFHOy0gGxV8aFByYEliUz/hvI8RDws2LSPnwpPHp4BuXEb60Z//1qNYSjn/36mWBsQQAAABiklEQVR4AYXThYKEIABFUVjBZwdgMIKBMP//iduBW3fCOrYSQh/+KGGEp/ijLCe8+Aukn6BEVHkBZZXkeV43eK6led6lMUDWC6lqvFTkKinKCwAqMowTnptZroFvADelFjxHWYWfgM4H9rymYTf8APoSxj4fRSbohHW7gkzMKJOBp6ifxmDEegHpPmpURNLqcEDB+BX0SraAOyVJUsD4XV9AUANNUQgvq+cLcVdbDMqFe2UwUX86wFmu2hhkD4KcY9kT7smm6TEqFwM9Usf3uiOO+4ckd53qyggUol5HvwuHRVlFV/f0i0BDbgj8zoCSebkgyHyKwGYNGvYMsFhfY5aHjsC8B7TkzgPg7HD0jbRpBMJeISfEC0Ac1tNCySYCiy3qvTO7DS0LiecJl9VXsNaqtjKAngerEeygpAxfwZSoZBxnzPa0FZpasF26r6Bhe6tTjTU5xxXlpCvm8+0LCIQHPLeJHs+tlJNb+gF0MMZk0evRtMb17+CP/gU6J6oL5vduhCyh/aPgHgGrGDBa7alAqQAAAABJRU5ErkJggg==`;
   const [offset, setOffset] = useState(0);
   const { scrollYProgress } = useScroll();
   const sty = useSpring({
@@ -66,17 +67,18 @@ const Zswiper = () => {
   useEffect(() => {
     // window.addEventListener("wheel", handleScroll,{passive:false});
     let lang = navigator.language||navigator.userLanguage;
-    let promise = document.querySelector('video').play();
+    // let video = document.querySelector('video');
+    // video && video.play();
   }, []);
   return (
     <div className={styles.countainer}>
-        <Nav title={`GZXM`}></Nav>
+        <Nav title={`GZXM`} logo={logo} title={`GINZA XIAOMA`}></Nav>
         <section className={styles.video}>
           <video controls={false}  muted autoplay loop={true} poster={`https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-1`}>
             <source src="https://ginzaxiaoma.com/static/images/index.mp4" type="video/mp4"/>
           </video>
         </section>
-        <Film data={films} title={`GinzaXiaoma`}></Film>
+        {/* <Film data={films} title={``}></Film> */}
         <section className={styles.wrap}>
           <div className={styles.title} id="h1">
             <h1>GZXM</h1>
@@ -84,7 +86,7 @@ const Zswiper = () => {
           </div>
           <PhotoWall data={photos}></PhotoWall>
         </section>
-        <FilmFall data={films} title={`GinzaXiaoma`}></FilmFall>
+        <FilmFall data={films} title={``}></FilmFall>
       <section className={styles.scroller}></section>
     </div>
   );
