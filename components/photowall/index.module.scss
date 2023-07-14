@@ -50,9 +50,8 @@
         backface-visibility:hidden;
         transform: translate3d(0,0,0);
         &:nth-child(2n-1){
-            transform: translateX(-100%);
+            transform: translateX(-80%);
         }
-        perspective: 10rem;
     }
     ul{ 
         position: relative;
@@ -61,11 +60,11 @@
         flex-direction: row;
         width: 200%;
         li {
+            position: relative;
             &::marker{
                 display: none;
             }
             display: inline-block;
-            width: 100%;
             height: fit-content;
             filter: brightness(70%) grayscale(100%);
             opacity: 0.5;

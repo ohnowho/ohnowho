@@ -26,14 +26,14 @@ const photowall = [
     imgs: arrs[0],
     animation: {
       x: 0,
-      playScale: [0, 2],
+      playScale: [0, 1.3],
     },
   },
   {
     imgs: arrs[1],
     animation: {
-      x: `-100%`,
-      playScale: [0, 2],
+      x: `-80%`,
+      playScale: [0, 1.6],
     },
   },
   {

@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
-// import { Parallax } from "rc-scroll-anim";
-import { Parallax } from "../Parallax/index";
-import ScrollParallax from "../Parallax/es/ScrollParallax";
+import { Parallax } from "rc-scroll-anim";
+// import { Parallax } from "../Parallax/index";
+// import ScrollParallax from "../Parallax/es/ScrollParallax";
 const PhotoWall = ({ data }: { data: any[] }) => {
   useEffect(() => {}, []);
   return (
@@ -14,7 +14,7 @@ const PhotoWall = ({ data }: { data: any[] }) => {
       </div>
       <div className={styles.photowall} id={`photowall`}>
         {data.map((row, rowi) => (
-          <ScrollParallax
+          <Parallax
             animation={row.animation}
             className={styles.wrap}
             key={rowi}
@@ -27,7 +27,7 @@ const PhotoWall = ({ data }: { data: any[] }) => {
                 </li>
               ))}
             </ul>
-          </ScrollParallax>
+          </Parallax>
         ))}
       </div>
     </div>
