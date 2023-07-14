@@ -8,12 +8,14 @@
     z-index: 999;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: transparent;
     backdrop-filter: blur(16px);
-
+   
     .wrap {
         padding: 10rem 16rem;
         width: 100%;
+        max-width: 1920px;
         position: relative;
         display: flex;
         border-radius: 50%;
@@ -43,7 +45,7 @@
         span {
             font-family: serif;
             color: #cec9c9;
-            font-size: 16rem;
+            font-size: 15rem;
             white-space: nowrap;
         }
     }
