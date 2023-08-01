@@ -78,8 +78,8 @@
 
             }
             flex-shrink: 0;
-            min-width: 33vw;
-            // max-width: 44vh;
+            min-width: 22vh;
+            max-width: 44vh;
             img{
                 width: 100%;
                 // max-width: 44vh;
@@ -93,6 +93,7 @@
         &:nth-child(2n-1){
             flex-direction: row;
             li:nth-child(2n-1){
+                // width: 33vh;
                 img{
                     width: 100%;
                 }

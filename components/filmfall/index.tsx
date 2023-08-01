@@ -36,7 +36,7 @@ export const FilmFall = ({ data,title }: { data: any[],title: String }) => {
   useEffect(() => {}, []);
   return (
     <div className={styles.filmfall} id="filmfall" >
-      <div className={styles.countainer}>
+      <div className={styles.container}>
         <p className={styles.header}>{title}</p>
         {trails.map((row, rowi) => (
           <Parallax
