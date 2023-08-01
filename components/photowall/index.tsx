@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import { Parallax } from "rc-scroll-anim";
 // import { Parallax } from "../Parallax/index";
-// import ScrollParallax from "../Parallax/es/ScrollParallax";
+import ScrollParallax from "../Parallax/es/ScrollParallax";
 const PhotoWall = ({ data }: { data: any[] }) => {
   useEffect(() => {}, []);
   return (
@@ -14,20 +14,20 @@ const PhotoWall = ({ data }: { data: any[] }) => {
       </div>
       <div className={styles.photowall} id={`photowall`}>
         {data.map((row, rowi) => (
-          <Parallax
+          <ScrollParallax
             animation={row.animation}
             className={styles.wrap}
             key={rowi}
             location="photowall"
           >
-            <ul id={`row-${rowi}`} key={rowi}>
+            <ul key={rowi}>
               {row.imgs.map((item, itemi) => (
                 <li key={itemi}>
                   <img src={item}></img>
                 </li>
               ))}
             </ul>
-          </Parallax>
+          </ScrollParallax>
         ))}
       </div>
     </div>

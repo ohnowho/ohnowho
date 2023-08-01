@@ -1,0 +1,56 @@
+@import "styles/global.scss";
+
+.swiper {
+    // background-color: wheat;
+    position: relative;
+    margin-top: 120rem;
+    width: 100vw;
+    // height: 100vh;
+
+    .countainer {
+        width: 100vw;
+        // height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .countainer {
+        ul{
+            display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 5vw;
+            padding: 0 5vw;
+
+        }
+        li{
+            display: flex;
+            border-radius: 30px;
+            width: 80vw;
+            height: 60vh;
+            flex-shrink: 0;
+            margin: 0 2.5vw;
+            justify-content: center;
+            align-items: end;
+            background-size: cover;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            filter: brightness(70%) grayscale(100%);
+            opacity: 0.5;
+            transition: all linear 0.6s;
+            
+        }
+
+    }
+
+    :global {
+        .adm-swiper-slide-active .adm-swiper-item li{
+            filter: brightness(90%) grayscale(0%);
+            opacity: 1;
+            transition: all linear 0.3s;
+        }
+    }
+}

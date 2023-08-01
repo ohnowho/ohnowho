@@ -58,7 +58,9 @@
         display: flex;
         width: fit-content;
         flex-direction: row;
+        
         width: 200%;
+        overflow: hidden;
         li {
             position: relative;
             &::marker{
@@ -75,7 +77,8 @@
                 transition: all linear 0.3s;
 
             }
-            // min-width: 33vh;
+            flex-shrink: 0;
+            min-width: 33vw;
             // max-width: 44vh;
             img{
                 width: 100%;
