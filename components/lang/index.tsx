@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 
-export const Lang = () => {
+export const Lang = ({language}:{language: String}) => {
   useEffect(() => {}, []);
   return (
     <div className={styles.lang}>
-      <span>EN</span>
+      <span>{language}</span>
     </div>
   );
 };

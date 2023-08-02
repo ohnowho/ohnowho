@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import {Lang} from "../lang";
-export const Nav = ({ title, logo }: { title: String; logo: String }) => {
+export const Nav = ({ title, logo,language }: { title: String; logo: String,language: String }) => {
   useEffect(() => {}, []);
   return (
     <div className={styles.nav}>
@@ -12,7 +12,7 @@ export const Nav = ({ title, logo }: { title: String; logo: String }) => {
           <img src={logo} />
         </picture>
         <span className={styles.title}>{title}</span>
-        <Lang></Lang>
+        <Lang language={language}></Lang>
       </div>
     </div>
   );

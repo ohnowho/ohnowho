@@ -4,7 +4,7 @@ import styles from "./index.module.scss";
 import { Parallax } from "rc-scroll-anim";
 // import { Parallax } from "../Parallax/index";
 import ScrollParallax from "../Parallax/es/ScrollParallax";
-const PhotoWall = ({ data,content }: { data: any[],content:any }) => {
+export const PhotoWall = ({ data,content }: { data: any[],content:any }) => {
   function spArr(arr, num) {
     let newArr = [];
     let len = Math.floor(arr.length/num)
@@ -67,5 +67,3 @@ const PhotoWall = ({ data,content }: { data: any[],content:any }) => {
     </div>
   );
 };
-
-export default PhotoWall;
