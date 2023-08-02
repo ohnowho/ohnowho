@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import { Parallax } from "rc-scroll-anim";
 
-export const Film = ({ data,title }: { data: any[],title: String }) => {
+export const Film = ({ data,content }: { data: any[],content: any }) => {
   let trails = [
     {
       imgs: data.slice(0, data.length / 2),
@@ -36,9 +36,9 @@ export const Film = ({ data,title }: { data: any[],title: String }) => {
   useEffect(() => {}, []);
   return (
     <div className={styles.filmscroll} id="filmscroll" >
-      <p className={styles.header}>{title}</p>
+      <h3 className={styles.header}>{content.title}</h3>
       <div className={styles.text}>
-        {`A decade has passed in a blink. This June, we are celebrating the 10th birthday of GINZA XIAOMA. With your continued love and support, we’ve come a long way from a simple dream to a growing global community: having departed from Ginza, Tokyo to arrive in Hong Kong, Singapore, and far beyond. To celebrate this milestone, we are launching a selection of events to express our sincerest gratitude to all of you for being a part of our journey.\n\nA decade has passed in a blink. This June, we are celebrating the 10th birthday of GINZA XIAOMA. With your continued love and support, we’ve come a long way from a simple dream to a growing global community: having departed from Ginza, Tokyo to arrive in Hong Kong, Singapore, and far beyond. To celebrate this milestone, we are launching a selection of events to express our sincerest gratitude to all of you for being a part of our journey.\n\n`}
+        {content.text}
       </div>
       <div className={styles.container}>
         {trails.map((row, rowi) => (
