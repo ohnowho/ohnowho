@@ -4,13 +4,34 @@
     position: relative;
     margin-top: 120rem;
     width: 100%;
-    height: 3900rem;
+    // height: 3900rem;
     .title{
         display: inline-block;
         height: 10vh;
         width: 100%;
         background-image: linear-gradient(180deg, #0b0b0d, rgba(12, 12, 18, 0));
         z-index: 9;
+    }
+    .header{
+        position: absolute;
+        
+        display: inline-block;
+        width: 100%;
+        height: 80rem;
+        background-image: linear-gradient(
+            to top,
+            rgba(10,11,13,0) 0%,
+            rgba(10,11,13,0.4) 40%,
+            rgba(10,11,13,0.6) 60%,
+            rgba(10,11,13,0.8) 80%,
+            rgba(10,11,13,1) 100%);
+        z-index: 999;
+        // top: -1rem;
+        padding-left: 10rem;
+        font-size: 36rem;
+        font-family: serif;
+        color: #cec9c9;
+        display: none;
     }
     .container{
         width: 100%;
@@ -21,30 +42,11 @@
         top: 0rem;
         bottom: 0rem;
         overflow: hidden;
-        perspective: 100px;
+        perspective: 2000rem;
         will-change: transform;
         transform: translate3d(0rem, 0%, 0rem) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
         transform-style: preserve-3d;
-        .header{
-            position: absolute;
-            top: 0;
-            display: inline-block;
-            width: 100%;
-            height: 80rem;
-            background-image: linear-gradient(
-                to top,
-                rgba(10,11,13,0) 0%,
-                rgba(10,11,13,0.4) 40%,
-                rgba(10,11,13,0.6) 60%,
-                rgba(10,11,13,0.8) 80%,
-                rgba(10,11,13,1) 100%);
-            z-index: 999;
-            top: -1rem;
-            padding-left: 10rem;
-            font-size: 36rem;
-            font-family: serif;
-            color: #cec9c9;
-        }
+
         .footer{
             position: absolute;
             bottom: 0;

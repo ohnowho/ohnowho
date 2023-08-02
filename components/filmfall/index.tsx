@@ -14,14 +14,14 @@ export const FilmFall = ({ data,title }: { data: any[],title: String }) => {
       style: {
         // transform: 'translateY(-2000px)'
         willChange: `transform`,
-        transform: `translate3d(0px, -1800px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
+        transform: `translate3d(0px, ${-120 * (data.length + 4)}rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
         transformStyle: `preserve-3d`
       }
     },
     {
       imgs: data.slice(data.length / 2, data.length),
       animation: {
-        y: -2000,
+        y: `${-120 * data.length}rem`,
         playScale: [0,6],
       },
       style: {
@@ -35,9 +35,9 @@ export const FilmFall = ({ data,title }: { data: any[],title: String }) => {
   ];
   useEffect(() => {}, []);
   return (
-    <div className={styles.filmfall} id="filmfall" >
-      <div className={styles.container}>
-        <p className={styles.header}>{title}</p>
+    <div className={styles.filmfall} id="filmfall" style={{height: `${data.length * 120}rem`}} >
+       <p className={styles.header}>{title}</p>
+      <div className={styles.container} >
         {trails.map((row, rowi) => (
           <Parallax
             // targetId="film"

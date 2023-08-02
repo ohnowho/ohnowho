@@ -11,9 +11,10 @@ import { Nav } from "../nav";
 import { VideoPlayer } from "../VideoPlayer";
 import { Paragraph } from '../paragraph';
 import { MySwiper } from '../swiper';
+import { Footer } from '../footer';
 const cdnHost = `/images`;
-const arr = Array.from({ length: 12 }, (v, k) => {
-  return `https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k}.webp`;
+const arr = Array.from({ length: 36 }, (v, k) => {
+  return `https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k%12}.webp`;
 });
 function spArr(arr, num) {
   let newArr = [];
@@ -22,7 +23,7 @@ function spArr(arr, num) {
   }
   return newArr;
 }
-let arrs = spArr(arr, 4);
+let arrs = spArr(arr, 6);
 const photowall = [
   {
     imgs: arrs[0],
@@ -46,10 +47,10 @@ const photowall = [
     },
   },
 ];
-const films = Array.from({ length: 12 }, (v, k) => {
+const films = Array.from({ length: 36 }, (v, k) => {
   return {
     label: `F/4.0\n30\nISO 1250`,
-    img: `https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k}.webp`,
+    img: `https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k%12}.webp`,
   };
 });
 const swiperData = Array.from({ length: 6 }, (v, k) => {
@@ -62,6 +63,24 @@ const swiperData = Array.from({ length: 6 }, (v, k) => {
     img: `https://img.ginzaxiaoma.com/images/tenthAnniv/fresh0609/freshnew/sharestory-${k}.webp`,
   };
 });
+const platforms = [
+  {
+    img: '/images/platform/instagram.png',
+    url: 'https://www.instagram.com/'
+  },
+  {
+    img: '/images/platform/tiktok.png',
+    url: 'https://www.tiktok.com/'
+  },
+  {
+    img: '/images/platform/twitter.png',
+    url: 'https://twitter.com/'
+  },
+  {
+    img: '/images/platform/wechat.png',
+    url: 'https://wechat.com/'
+  }
+]
 const Zswiper = () => {
   const logo = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAdVBMVEXNq4ObgmOKdFiReV3AoHrbt4skHhcAAAAWEw+ukm8tJh0NCwhEOSyEb1QxKR9SRTV+alA9Mye2mXX2zpztxpf/3qmhh2caFhFHOy0gGxV8aFByYEliUz/hvI8RDws2LSPnwpPHp4BuXEb60Z//1qNYSjn/36mWBsQQAAABiklEQVR4AYXThYKEIABFUVjBZwdgMIKBMP//iduBW3fCOrYSQh/+KGGEp/ijLCe8+Aukn6BEVHkBZZXkeV43eK6led6lMUDWC6lqvFTkKinKCwAqMowTnptZroFvADelFjxHWYWfgM4H9rymYTf8APoSxj4fRSbohHW7gkzMKJOBp6ifxmDEegHpPmpURNLqcEDB+BX0SraAOyVJUsD4XV9AUANNUQgvq+cLcVdbDMqFe2UwUX86wFmu2hhkD4KcY9kT7smm6TEqFwM9Usf3uiOO+4ckd53qyggUol5HvwuHRVlFV/f0i0BDbgj8zoCSebkgyHyKwGYNGvYMsFhfY5aHjsC8B7TkzgPg7HD0jbRpBMJeISfEC0Ac1tNCySYCiy3qvTO7DS0LiecJl9VXsNaqtjKAngerEeygpAxfwZSoZBxnzPa0FZpasF26r6Bhe6tTjTU5xxXlpCvm8+0LCIQHPLeJHs+tlJNb+gF0MMZk0evRtMb17+CP/gU6J6oL5vduhCyh/aPgHgGrGDBa7alAqQAAAABJRU5ErkJggg==`;
   const [data, setData] = useState({
@@ -80,11 +99,22 @@ const Zswiper = () => {
       content: {
         title: `DOUBLE POINTS`,
         subtitle: `FOR ALL PURCHASES ONLINE AND IN-STORE`,
-        text: `Throughout the month of June, GINZA XIAOMA members will be rewarded double points for all purchases across all platforms.`,
+        text: `Throughout the month of June, GINZA XIAOMA members will be rewarded double points for all purchases across all platforms.\n\nThroughout the month of June, GINZA XIAOMA members will be rewarded double points for all purchases across all platforms.`,
       }
+    },
+    section3: {
+      films,
+      title: `Tokyo Store`
     },
     section5: {
       swiperData
+    },
+    footer: {
+      platforms,
+      content: {
+        title:`GET IN TOUCH`,
+        text: `Chuo-Ku, Tokyo, Japan, 104-0061\nGINZA XIAOMA ⓒ 2022`
+      }
     }
   });
   const sty = useSpring({
@@ -132,12 +162,13 @@ const Zswiper = () => {
         </section>
         <section> <FilmFall data={films} title={``}></FilmFall></section>
         <section><Paragraph data={data.section2.content}></Paragraph></section>
-        <section><Film data={films} title={``}></Film></section>
-        <section><Paragraph data={data.section2.content}></Paragraph></section>
         <section><MySwiper data={data.section5.swiperData}></MySwiper></section>
         <section><Paragraph data={data.section2.content}></Paragraph></section>
-        {/* <FilmFall data={films} title={``}></FilmFall> */}
-        {/* <section className={styles.scroller}></section> */}
+        <section><Film data={data.section3.films} title={data.section3.title}></Film></section>
+        <section><Paragraph data={data.section2.content}></Paragraph></section>
+        <section><Footer data={data.footer.platforms} content={data.footer.content}></Footer></section>
+
+
       </div>
     </div>
   );
