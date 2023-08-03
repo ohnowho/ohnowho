@@ -1,0 +1,27 @@
+@import "styles/global.scss";
+
+.Paragraph{
+    color: rgb(206, 201, 201);
+    font-family: serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+    .title{
+        font-size: 25rem;
+    }
+    .subtitle{
+        font-size: 16rem;
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+    .text{
+        line-height: 28rem;
+        font-size: 16rem;
+        white-space: pre-wrap;
+    }
+}
