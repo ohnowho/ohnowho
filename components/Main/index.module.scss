@@ -32,33 +32,7 @@
         display: inline-block;
         width: 100%;
     }
-    .video {
-        position: relative;
-        margin-top: 15vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        height: auto;
-        img {
-            position: absolute;
-            border-radius: 30px;
-            width: 90%;
-            height: 60vh;
-            max-height: 60vh;
-            object-fit: cover;
-            z-index: -1;
-            display: none;
-        }
-        video {
-            border-radius: 30px;
-            width: 90%;
-            height: 70vh;
-            max-height: 80vh;
-            object-fit: cover;
-        }
-    }
+
 }
 
 
