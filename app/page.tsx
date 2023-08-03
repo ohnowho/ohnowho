@@ -1,8 +1,26 @@
 import "/styles/global.css";
-export default function Home() {
+import Main from "@/components/Main";
+import axios from "axios";
+
+export default async function Home() {
+  let res = { data: null };
+
+  try {
+    const result = await axios.get(process.env.CONFIG_API, {
+      headers: {
+        Authorization: process.env.CONFIG_TOKEN,
+      },
+    });
+    if (result.data) {
+      res = result;
+    }
+  } catch (err) {
+    // console.log(JSON.stringify(err))
+  }
+
   return (
-    <main>
-      <div><iframe src="https://gifer.com/embed/wau" width="100%" height="100%" frameBorder="0" allowFullScreen></iframe></div>
+    <main id="main">
+      <Main res={res.data}></Main>
     </main>
-  )
+  );
 }

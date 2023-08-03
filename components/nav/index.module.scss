@@ -1,0 +1,57 @@
+@import "styles/global.scss";
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    backdrop-filter: blur(16px);
+   
+    .wrap {
+        padding: 10rem 16rem;
+        width: 100%;
+        max-width: 1920px;
+        position: relative;
+        display: flex;
+        border-radius: 50%;
+        justify-content: space-between;
+        align-items: center;
+
+        picture {
+            width: 32rem;
+            height: 32rem;
+
+            img {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                // border-radius: 15px;
+                filter: grayscale(60%);
+            }
+        }
+
+        .title {
+            font-family: serif;
+            color: #cec9c9;
+            font-size: 18rem;
+            white-space: nowrap;
+        }
+        span {
+            font-family: serif;
+            color: #cec9c9;
+            font-size: 15rem;
+            white-space: nowrap;
+        }
+    }
+
+
+
+
+
+}

@@ -1,0 +1,54 @@
+@import "styles/global.scss";
+
+.screen{
+    background-color: rgb(10,11,13);
+    display: flex;
+    justify-content:center;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: visible;
+}
+.container {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    position: relative;
+    // height: 100vh;
+    width: 100vw;
+    background-color: rgb(10,11,13);
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    &::before{
+        content: '';
+        display: inline-block;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    section {
+        display: inline-block;
+        width: 100%;
+    }
+
+}
+
+
+
+
+.scroller {
+    display: inline-block;
+    width: 100vw;
+    height: 300vh;
+}
+@media screen and (min-width: 768px) {
+    .container{
+        .video{
+            video {
+
+            }
+        }
+    }
+}
