@@ -8,21 +8,17 @@ export const VideoJS = ({options}:any) => {
   const videoRef = useRef(null);
   const playerRef = useRef<any>(null);
 
-  console.log('options',options)
   const onReady = (play: any) => {
-    console.log("play====", play);
     videoRef.current = play;
     play.play();
   };
   useEffect(() => {
-    // make sure Video.js player is only initialized once
-    console.log(playerRef)
     if (!playerRef.current) {
       const videoElement = videoRef.current;
       if (!videoElement) return;
 
       const player = (playerRef.current = videojs(videoElement, options, () => {
-        console.log("player is ready");
+
         onReady && onReady(player);
       }));
     } else {
@@ -42,7 +38,6 @@ export const VideoJS = ({options}:any) => {
   );
 };
 export const VideoPlayer = ({config}:any) => {
-  console.log(config)
   const videoRef = useRef(null);
   const playerRef = useRef<any>(null);
   const options = {

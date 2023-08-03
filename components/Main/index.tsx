@@ -30,7 +30,7 @@ const Zswiper = ({ res }: { res: any }) => {
   const [data, setData] = useState(initData(res));
 
   useEffect(() => {
-    console.log(JSON.stringify(data));
+
     let lang = navigator.language || navigator.userLanguage;
     window.addEventListener(
       "click",
