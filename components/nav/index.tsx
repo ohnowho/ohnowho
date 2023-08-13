@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import {Lang} from "../lang";
-export const Nav = ({ title, logo,language }: { title: String; logo: String,language: String }) => {
+export const Nav = ({ title, logo,language }: { title: string; logo: string,language: string }) => {
   useEffect(() => {}, []);
   return (
     <div className={styles.nav}>

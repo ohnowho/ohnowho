@@ -5,13 +5,12 @@ import { PhotoWall } from "../photowall";
 import { FilmFall } from "../filmfall";
 import { Film } from "../filmscroll";
 import { Nav } from "../nav";
-import { VideoPlayer } from "../VideoPlayer";
 import { Paragraph } from "../paragraph";
 import { MySwiper } from "../swiper";
 import { Footer } from "../footer";
 import { MyVideo } from "../Video";
 
-function initData(res) {
+function initData(res:any): {key:string, value: any}[] {
   if (!res.data || !res.data.records) {
     return [];
   }
@@ -31,7 +30,7 @@ const Zswiper = ({ res }: { res: any }) => {
 
   useEffect(() => {
 
-    let lang = navigator.language || navigator.userLanguage;
+    // let lang = navigator.language || navigator.userLanguage;
     window.addEventListener(
       "click",
       (e) => {
@@ -46,28 +45,28 @@ const Zswiper = ({ res }: { res: any }) => {
     }, 100);
   }, []);
   const renderMap = {
-    Nav: (section) => {
+    Nav: (section: any) => {
       return <Nav title={section.title}  logo={section.logo} language={section.language}></Nav>;
     },
-    Video: (section) => {
+    Video: (section: any) => {
       return <MyVideo data={section.videoConfig}></MyVideo>;
     },
-    Paragraph: (section) => {
+    Paragraph: (section: any) => {
       return <Paragraph data={section.content}></Paragraph>;
     },
-    PhotoWall: (section) => {
+    PhotoWall: (section: any) => {
       return <PhotoWall data={section.photowall} content={section.content}></PhotoWall>;
     },
-    FilmFall: (section) => {
+    FilmFall: (section: any) => {
       return <FilmFall data={section.films} title={``}></FilmFall>;
     },
-    Film: (section) => {
+    Film: (section: any) => {
       return <Film data={section.films} content={section.content}></Film>;
     },
-    Swiper: (section) => {
+    Swiper: (section: any) => {
       return <MySwiper data={section.swiperData}></MySwiper>;
     },
-    Footer: (section) => {
+    Footer: (section: any) => {
       return (
         <Footer data={section.platforms} content={section.content}></Footer>
       );
@@ -77,7 +76,7 @@ const Zswiper = ({ res }: { res: any }) => {
     <div className={styles.screen}>
       <div className={styles.container}>
         {data.map((section, i) => (
-          <section>{renderMap[section.key](section.value)}</section>
+          <section key={i}>{renderMap[section.key as keyof typeof renderMap](section.value)}</section>
         ))}
       </div>
     </div>

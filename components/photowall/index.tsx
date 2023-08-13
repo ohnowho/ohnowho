@@ -2,12 +2,16 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import { Parallax } from "rc-scroll-anim";
-// import { Parallax } from "../Parallax/index";
-import ScrollParallax from "../Parallax/es/ScrollParallax";
-export const PhotoWall = ({ data,content }: { data: any[],content:any }) => {
-  function spArr(arr, num) {
+export const PhotoWall = ({
+  data,
+  content,
+}: {
+  data: string[];
+  content: { title: string; subtitle: string };
+}) => {
+  function spArr(arr:any[], num:number) {
     let newArr = [];
-    let len = Math.floor(arr.length/num)
+    let len = Math.floor(arr.length / num);
     for (let i = 0; i < arr.length; ) {
       newArr.push(arr.slice(i, i + len));
       i = i + len;
@@ -48,7 +52,7 @@ export const PhotoWall = ({ data,content }: { data: any[],content:any }) => {
       </div>
       <div className={styles.photowall} id={`photowall`}>
         {trails.map((row, rowi) => (
-          <ScrollParallax
+          <Parallax
             animation={row.animation}
             className={styles.wrap}
             key={rowi}
@@ -61,7 +65,7 @@ export const PhotoWall = ({ data,content }: { data: any[],content:any }) => {
                 </li>
               ))}
             </ul>
-          </ScrollParallax>
+          </Parallax>
         ))}
       </div>
     </div>

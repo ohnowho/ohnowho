@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 import { Parallax } from "rc-scroll-anim";
 
-export const FilmFall = ({ data,title }: { data: any[],title: String }) => {
+export const FilmFall = ({ data,title }: { data: {label: string, img: string}[],title: string }) => {
   let trails = [
     {
       imgs: data.slice(0, data.length / 2),
@@ -12,10 +12,8 @@ export const FilmFall = ({ data,title }: { data: any[],title: String }) => {
         playScale: [0, 6],
       },
       style: {
-        // transform: 'translateY(-2000px)'
         willChange: `transform`,
-        transform: `translate3d(0px, ${-120 * (data.length + 4)}rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-        transformStyle: `preserve-3d`
+        transform: `translate3d(0px, ${-120 * (data.length + 4)}rem, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`
       }
     },
     {
@@ -25,10 +23,8 @@ export const FilmFall = ({ data,title }: { data: any[],title: String }) => {
         playScale: [0,6],
       },
       style: {
-        // transform: 'translateY(-2000px)'
         willChange: `transform`,
-        transform: `translate3d(0px, 200px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-        transformStyle: `preserve-3d`
+        transform: `translate3d(0px, 200px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`
       }
 
     }

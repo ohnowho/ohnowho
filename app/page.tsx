@@ -4,12 +4,16 @@ import axios from "axios";
 
 export default async function Home() {
   let res = { data: null };
-
+  let url = process.env.CONFIG_API || '';
+  let token = process.env.CONFIG_TOKEN || ''
   try {
-    const result = await axios.get(process.env.CONFIG_API, {
+    const result = await axios.get(url, {
       headers: {
-        Authorization: process.env.CONFIG_TOKEN,
+        Authorization: token,
       },
+      params: {
+        time: new Date()
+      }
     });
     if (result.data) {
       res = result;

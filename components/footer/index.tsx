@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "./index.module.scss";
 
-export const Footer = ({ data,content }: { data: any[],content: any }) => {
+export const Footer = ({ data,content }: { data: {img: string, url: string}[],content: {title: string, text: string} }) => {
   useEffect(() => {}, []);
   return (
     <div className={styles.footer}>
