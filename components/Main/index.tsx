@@ -11,6 +11,10 @@ import { Footer } from "../footer";
 import { MyVideo } from "../Video";
 
 function initData(res:any): {key:string, value: any}[] {
+  // 默认数据：已经是解析后的 [{ key, value }] 数组，直接返回
+  if (Array.isArray(res)) {
+    return res;
+  }
   if (!res.data || !res.data.records) {
     return [];
   }

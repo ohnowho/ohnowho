@@ -1,0 +1,226 @@
+[
+  {
+    "key": "Nav",
+    "value": {
+      "title": "GIN",
+      "logo": "/images/gin/NAV_LOGO.webp",
+      "language": "EN"
+    }
+  },
+  {
+    "key": "Video",
+    "value": {
+      "videoConfig": {
+        "src": "/images/gin/COVER.mp4",
+        "poster": "/images/gin/VIDEO_POSTER.webp",
+        "type": "video/mp4"
+      }
+    }
+  },
+  {
+    "key": "Paragraph",
+    "value": {
+      "content": {
+        "title": "WHAT IS GIN",
+        "subtitle": "The world's most botanical spirit",
+        "text": "Gin is a distilled alcoholic drink whose predominant flavour comes from juniper berries. It begins life as a neutral grain spirit, which is re-distilled with a secret blend of botanicals - always juniper, usually coriander, citrus peel, angelica and orris root.\n\nBecause the only rule is that it must taste of juniper, gin is one of the most creative and varied spirits in the world. No two brands taste alike, and that is exactly the point."
+      }
+    }
+  },
+  {
+    "key": "PhotoWall",
+    "value": {
+      "photowall": [
+        "/images/gin/PHOTO_WALL_01.webp",
+        "/images/gin/PHOTO_WALL_02.webp",
+        "/images/gin/PHOTO_WALL_03.webp",
+        "/images/gin/PHOTO_WALL_04.webp",
+        "/images/gin/PHOTO_WALL_05.webp",
+        "/images/gin/PHOTO_WALL_06.webp",
+        "/images/gin/PHOTO_WALL_07.webp",
+        "/images/gin/PHOTO_WALL_08.webp",
+        "/images/gin/PHOTO_WALL_09.webp"
+      ],
+      "content": {
+        "title": "THE WORLD OF GIN",
+        "subtitle": "Botanicals, stills & serves"
+      }
+    }
+  },
+  {
+    "key": "Paragraph",
+    "value": {
+      "content": {
+        "title": "A SHORT HISTORY",
+        "subtitle": "From Dutch genever to London Dry",
+        "text": "Gin's story starts in the 17th century with genever, a juniper-flavoured spirit from the Low Countries. English soldiers fighting in the Eighty Years' War drank it to steady their nerves - the original 'Dutch courage' - and carried a taste for it home.\n\nBritish distillers refined it into a dry, unsweetened spirit, and by the 18th century gin had become cheap, potent and famously controversial during the London 'Gin Craze'.\n\nSuccessive laws tamed the trade and raised its quality, giving rise to the crisp London Dry style that still defines gin today."
+      }
+    }
+  },
+  {
+    "key": "FilmFall",
+    "value": {
+      "films": [
+        { "label": "TANQUERAY\nEngland\n1830", "img": "/images/gin/FILMFALL_TANQUERAY.webp" },
+        { "label": "BEEFEATER\nEngland\n1863", "img": "/images/gin/FILMFALL_BEEFEATER.webp" },
+        { "label": "GORDON'S\nEngland\n1769", "img": "/images/gin/FILMFALL_GORDON_S.webp" },
+        { "label": "PLYMOUTH\nEngland\n1793", "img": "/images/gin/FILMFALL_PLYMOUTH.webp" },
+        { "label": "BOMBAY SAPPHIRE\nEngland\n1987", "img": "/images/gin/FILMFALL_BOMBAY_SAPPHIRE.webp" },
+        { "label": "SIPSMITH\nEngland\n2009", "img": "/images/gin/FILMFALL_SIPSMITH.webp" },
+        { "label": "WHITLEY NEILL\nEngland\n2005", "img": "/images/gin/FILMFALL_WHITLEY_NEILL.webp" },
+        { "label": "SILENT POOL\nEngland\n2014", "img": "/images/gin/FILMFALL_SILENT_POOL.webp" },
+        { "label": "HENDRICK'S\nScotland\n1999", "img": "/images/gin/FILMFALL_HENDRICK_S.webp" },
+        { "label": "THE BOTANIST\nScotland\n2010", "img": "/images/gin/FILMFALL_THE_BOTANIST.webp" },
+        { "label": "CAORUNN\nScotland\n2009", "img": "/images/gin/FILMFALL_CAORUNN.webp" },
+        { "label": "EDINBURGH GIN\nScotland\n2010", "img": "/images/gin/FILMFALL_EDINBURGH_GIN.webp" },
+        { "label": "BRECON\nWales\n1990", "img": "/images/gin/FILMFALL_BRECON.webp" },
+        { "label": "DRUMSHANBO\nIreland\n2015", "img": "/images/gin/FILMFALL_DRUMSHANBO.webp" },
+        { "label": "DINGLE\nIreland\n2013", "img": "/images/gin/FILMFALL_DINGLE.webp" },
+        { "label": "BOLS GENEVER\nNetherlands\n1820", "img": "/images/gin/FILMFALL_BOLS_GENEVER.webp" },
+        { "label": "ZUIDAM\nNetherlands\n2002", "img": "/images/gin/FILMFALL_ZUIDAM.webp" },
+        { "label": "FILLIERS\nBelgium\n1880", "img": "/images/gin/FILMFALL_FILLIERS.webp" },
+        { "label": "CITADELLE\nFrance\n1996", "img": "/images/gin/FILMFALL_CITADELLE.webp" },
+        { "label": "G'VINE\nFrance\n2006", "img": "/images/gin/FILMFALL_HENDRICK_S.webp" },
+        { "label": "GIN MARE\nSpain\n2007", "img": "/images/gin/FILMFALL_GIN_MARE.webp" },
+        { "label": "NORDES\nSpain\n2012", "img": "/images/gin/FILMFALL_NORDES.webp" },
+        { "label": "PUERTO DE INDIAS\nSpain\n2015", "img": "/images/gin/FILMFALL_PUERTO_DE_INDIAS.webp" },
+        { "label": "MALFY\nItaly\n2016", "img": "/images/gin/FILMFALL_MALFY.webp" },
+        { "label": "MONKEY 47\nGermany\n2010", "img": "/images/gin/FILMFALL_MONKEY_47.webp" },
+        { "label": "THE DUKE\nGermany\n2013", "img": "/images/gin/FILMFALL_THE_DUKE.webp" },
+        { "label": "ROKU\nJapan\n2017", "img": "/images/gin/FILMFALL_ROKU.webp" },
+        { "label": "KI NO BI\nJapan\n2016", "img": "/images/gin/FILMFALL_KI_NO_BI.webp" },
+        { "label": "AVIATION\nUSA\n2006", "img": "/images/gin/FILMFALL_AVIATION.webp" },
+        { "label": "JUNIPERO\nUSA\n1996", "img": "/images/gin/FILMFALL_JUNIPERO.webp" },
+        { "label": "BARR HILL\nUSA\n2011", "img": "/images/gin/FILMFALL_BARR_HILL.webp" },
+        { "label": "FOUR PILLARS\nAustralia\n2013", "img": "/images/gin/FILMFALL_FOUR_PILLARS.webp" },
+        { "label": "SCAPEGRACE\nNew Zealand\n2014", "img": "/images/gin/FILMFALL_SCAPEGRACE.webp" },
+        { "label": "UNGAVA\nCanada\n2012", "img": "/images/gin/FILMFALL_UNGAVA.webp" },
+        { "label": "HERNO\nSweden\n2011", "img": "/images/gin/FILMFALL_HERNO.webp" },
+        { "label": "INVERROCHE\nSouth Africa\n2011", "img": "/images/gin/FILMFALL_INVERROCHE.webp" }
+      ]
+    }
+  },
+  {
+    "key": "Paragraph",
+    "value": {
+      "content": {
+        "title": "HOW GIN IS MADE",
+        "subtitle": "Base spirit, juniper & botanicals",
+        "text": "Every gin begins with a base alcohol, usually made from grain, distilled to a high purity and then flavoured by one of three methods.\n\nMaceration: the botanicals are steeped in the spirit before a final distillation. Vapour infusion: the spirit passes through a basket of botanicals during distillation, for a lighter, brighter profile. Compounding: essences and oils are simply blended into the spirit.\n\nAfter distillation the spirit is cut to bottling strength with water. In a London Dry gin, nothing else is added - no sugar, no colour."
+      }
+    }
+  },
+  {
+    "key": "Swiper",
+    "value": {
+      "swiperData": [
+        {
+          "content": {
+            "title": "LONDON DRY",
+            "subtitle": "Crisp & juniper-forward",
+            "text": "The classic dry style. Botanicals are distilled with the spirit and nothing is added afterwards, giving a clean, juniper-led profile."
+          },
+          "img": "/images/gin/SWIPER_LONDON_DRY.webp"
+        },
+        {
+          "content": {
+            "title": "PLYMOUTH",
+            "subtitle": "Soft & fruity",
+            "text": "A protected style from the Plymouth distillery, historically a navy gin richer in root botanicals and gentle on the juniper."
+          },
+          "img": "/images/gin/SWIPER_PLYMOUTH.webp"
+        },
+        {
+          "content": {
+            "title": "OLD TOM",
+            "subtitle": "Lightly sweetened",
+            "text": "A relic of the 18th century, lightly sweetened after distillation and warmer in flavour. The gin that gave us the original Tom Collins."
+          },
+          "img": "/images/gin/SWIPER_OLD_TOM.webp"
+        },
+        {
+          "content": {
+            "title": "NAVY STRENGTH",
+            "subtitle": "Over 57% ABV",
+            "text": "Bottled at a strength that would not spill-proof gunpowder. Bold, intense and made to be diluted, not sipped neat."
+          },
+          "img": "/images/gin/SWIPER_NAVY_STRENGTH.webp"
+        },
+        {
+          "content": {
+            "title": "GENEVER",
+            "subtitle": "The Dutch ancestor",
+            "text": "The juniper-flavoured malt spirit that came before gin, often barrel-aged and richer, with a long and proud tradition in the Low Countries."
+          },
+          "img": "/images/gin/SWIPER_GENEVER.webp"
+        },
+        {
+          "content": {
+            "title": "NEW WESTERN",
+            "subtitle": "A botanical playground",
+            "text": "Contemporary gins that move juniper off centre stage, playing with cucumber, rose, tea or citrus. Distillers' freedom at its best."
+          },
+          "img": "/images/gin/SWIPER_NEW_WESTERN.webp"
+        }
+      ]
+    }
+  },
+  {
+    "key": "Paragraph",
+    "value": {
+      "content": {
+        "title": "BOTANICALS",
+        "subtitle": "Beyond juniper",
+        "text": "Juniper is the one non-negotiable ingredient, but it is rarely alone.\n\nCoriander seed adds citrus and spice; angelica root binds the flavours together; orris root fixes the aroma; citrus peels brighten the spirit. Beyond the classics, distillers reach for cardamom, cassia, liquorice, cubeb, lavender, cucumber, rose - and even tea and seaweed.\n\nThe balance of these botanicals, not the base alcohol, is what makes each gin unique."
+      }
+    }
+  },
+  {
+    "key": "Film",
+    "value": {
+      "content": {
+        "title": "GIN COCKTAILS & RECIPES",
+        "text": "Gin and the cocktail grew up together. The word 'cocktail' first appeared in print in 1806, and by the 1860s, when the first great bartending manuals were written, gin was already the most versatile spirit behind the bar. Its dry, aromatic, juniper-led character cuts through sugar, lifts citrus and flatters herbs, spices and bitter liqueurs. Whisky and brandy bring weight and warmth; gin brings clarity and lift. That is why so many of the world's most enduring drinks are built on it, and why a single bottle can keep a home bar busy for years.\n\nMost gin cocktails fall into a handful of families. The first is the spirit-forward, stirred family: a generous measure of gin is chilled with vermouth, bitters or a liqueur and served neat, so the botanicals can speak. The Dry Martini, the Negroni and the Last Word belong here. They look deceptively simple, but the skill lies in balancing strength against dilution and in choosing a gin whose botanicals suit everything beside them.\n\nThe second family is built on citrus and sweetness and is almost always shaken. Gin, lemon or lime juice and a sweetener are combined and agitated with ice; the shaking chills the drink quickly and adds a soft, aerated texture. The Gimlet, the Bee's Knees, the Clover Club and the White Lady are classic examples. Here a softer, more floral gin often works best, letting the fruit, the honey and the egg white do the talking.\n\nThe third family is the highball: long, cool and carbonated. The Gin & Tonic, the Tom Collins and the French 75 take a measure of gin and stretch it with tonic, soda or sparkling wine over plenty of ice. These drinks are refreshing by design, and they are unforgiving: good water, good ice, a fresh garnish and a gin that can hold its own when diluted make all the difference.\n\nBeyond these, a fourth group celebrates fruit and colour. The Bramble layers blackberry liqueur over a gin sour; the Aviation adds maraschino and violet; the Singapore Sling is a long, tropical, gently spiced build. These drinks show how absorbent gin is - it carries almost any flavour you give it without ever losing its own identity.\n\nTechnique matters as much as the recipe. As a rule, drinks made only from spirits are stirred, while drinks that contain citrus, egg white or dairy are shaken. Stirring chills and dilutes gently while keeping the drink clear; shaking chills faster and adds air and froth. Fresh ice is essential, because wet, re-used ice adds too much water and makes even a well-made drink taste thin. A recipe, in the end, is only a starting point: the same three ingredients can produce a completely different drink depending on the gin, the vermouth, the exact ratio and the temperature at which it is served.\n\nTwo of the classics deserve a special word. The Dry Martini is the purest expression of gin, a study in restraint, and the subject of more argument than any other cocktail ever mixed. The Negroni, with its equal parts of gin, Campari and sweet vermouth, is the perfect aperitivo: bitter, sweet and botanical all at once, and now arguably the most ordered cocktail in the world.\n\nThe twelve recipes that follow - from the Dry Martini and the Gimlet to the Bramble and the Clover Club - are the backbone of any gin drinker's repertoire. Learn them first, then learn to break them: adjust a ratio, swap a garnish, change the gin. The modern craft-cocktail revival has done exactly that, dusting off forgotten classics and pairing them with the extraordinary new gins that distillers around the world are making today. There has never been a better time to drink gin."
+      },
+      "films": [
+        { "label": "NEGRONI", "img": "/images/gin/FILM_NEGRONI.webp" },
+        { "label": "DRY MARTINI", "img": "/images/gin/FILM_DRY_MARTINI.webp" },
+        { "label": "GIN & TONIC", "img": "/images/gin/FILM_GIN_TONIC.webp" },
+        { "label": "TOM COLLINS", "img": "/images/gin/FILM_TOM_COLLINS.webp" },
+        { "label": "GIMLET", "img": "/images/gin/FILM_GIMLET.webp" },
+        { "label": "AVIATION", "img": "/images/gin/FILM_AVIATION.webp" },
+        { "label": "BEE'S KNEES", "img": "/images/gin/FILM_BEE_S_KNEES.webp" },
+        { "label": "LAST WORD", "img": "/images/gin/FILM_LAST_WORD.webp" },
+        { "label": "BRAMBLE", "img": "/images/gin/FILM_BRAMBLE.webp" },
+        { "label": "FRENCH 75", "img": "/images/gin/FILM_FRENCH_75.webp" },
+        { "label": "SINGAPORE SLING", "img": "/images/gin/FILM_SINGAPORE_SLING.webp" },
+        { "label": "CLOVER CLUB", "img": "/images/gin/FILM_CLOVER_CLUB.webp" }
+      ]
+    }
+  },
+  {
+    "key": "Paragraph",
+    "value": {
+      "content": {
+        "title": "HOW TO SERVE",
+        "subtitle": "The perfect gin & tonic",
+        "text": "Most of the world meets gin in a gin & tonic: a generous measure of gin, a good tonic, plenty of ice and a citrus twist.\n\nBut gin is equally at home in a dry Martini, a bitter Negroni or a refreshing Tom Collins. Whatever the serve, the rule is simple - keep it cold, keep it fresh, and let the juniper speak."
+      }
+    }
+  },
+  {
+    "key": "Footer",
+    "value": {
+      "platforms": [
+        { "img": "/images/platform/instagram.png", "url": "https://www.instagram.com/" },
+        { "img": "/images/platform/twitter.png", "url": "https://twitter.com/" },
+        { "img": "/images/platform/youtube.png", "url": "https://www.youtube.com/" },
+        { "img": "/images/platform/email.png", "url": "mailto:hello@gin.example" }
+      ],
+      "content": {
+        "title": "",
+        "text": "KONAN ⓒ 2026"
+      }
+    }
+  }
+]
