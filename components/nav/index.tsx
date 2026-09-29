@@ -9,7 +9,7 @@ export const Nav = ({ title, logo,language }: { title: string; logo: string,lang
       <div className={styles.wrap}>
         <picture>
           {/* <source src={logo} media={`(min-width: 1000px)`} /> */}
-          <img src={logo} />
+          {logo ? <img src={logo} /> : null}
         </picture>
         <span className={styles.title}>{title}</span>
         <Lang language={language}></Lang>
