@@ -12,7 +12,11 @@ export const Nav = ({ title, logo,language }: { title: string; logo: string,lang
           {logo ? <img src={logo} /> : null}
         </picture>
         <span className={styles.title}>{title}</span>
-        <Lang language={language}></Lang>
+        {language ? (
+          <Lang language={language}></Lang>
+        ) : (
+          <span className={styles.placeholder}></span>
+        )}
       </div>
     </div>
   );

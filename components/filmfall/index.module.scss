@@ -14,7 +14,7 @@
     }
     .header{
         position: absolute;
-        
+
         display: inline-block;
         width: 100%;
         height: 80rem;
@@ -63,16 +63,16 @@
             z-index: 999;
             bottom: -1rem;
         }
-  
+
     }
     .wrap {
         ul {
             width: 100%;
-           
+
             &:first-child{
                 padding-right: 10rem;
                 li{
-                    margin-right: 15rem;
+                    margin-right: 12rem;
                 }
             }
             &:last-child{
@@ -97,15 +97,16 @@
                         transition: all linear 0.3s;
                     }
                 }
-                p{  
+                p{
                     position: absolute;
                     display: flex;
                     flex-direction: column;
                     top: 20%;
-                    height: 50%;
+                    height: 75%;
                     justify-content: space-between;
                     align-items: center;
-                    right: -15%;
+                    width: 20rem;
+                    right: -12rem;
                     span{
                         position: relative;
                         color: #cec9c9;
@@ -113,6 +114,7 @@
                         line-height: 1;
                         letter-spacing: 1px;
                         transform: rotate(90deg);
+                        white-space: nowrap;
                         font-family: 'Beatrice', Arial, sans-serif;
                     }
                 }

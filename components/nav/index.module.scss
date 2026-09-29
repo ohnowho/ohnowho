@@ -42,6 +42,12 @@
             font-size: 18rem;
             white-space: nowrap;
         }
+        // language 为空时的占位，与 logo 同宽以保持标题居中
+        .placeholder {
+            display: inline-block;
+            width: 32rem;
+            height: 18rem;
+        }
         span {
             font-family: serif;
             color: #cec9c9;
